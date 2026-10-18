@@ -11,6 +11,19 @@ public class Book {
         this.pages=pages;
     }
 
+    public String getTitel(){
+        return titel;}
+    public String getAutor(){
+        return autor;
+    }
+    public double getPreis(){
+        return preis;
+    }
+    public int getPages(){
+        return pages;
+    }
+
+
     @Override
     public String toString(){
         return titel + " ( "+autor + " , "+ preis+" Euro, "+pages + " Seiten ) ";
