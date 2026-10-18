@@ -13,6 +13,6 @@ public class Book {
 
     @Override
     public String toString(){
-        return titel + " ( "+autor + " , "+ preis+" Euro, "+pages + " Seiten) ";
+        return titel + " ( "+autor + " , "+ preis+" Euro, "+pages + " Seiten ) ";
     }
 }
