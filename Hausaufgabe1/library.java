@@ -9,4 +9,13 @@ public class library {
         this.allBooks.add(book);
     }
 
+    public List<Book> getBooksbyAuthor(){
+        List<Book> result=new ArrayList<>();
+        for(i=0;i<allBooks.size();i++){
+            Book book=allBooks.get(i);
+            if(book.getAutor().equals(author)){
+                result.add(book);
+            }
+        }
+    }
 }
