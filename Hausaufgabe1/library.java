@@ -30,25 +30,35 @@ public class library {
         return totalPages / books.size();
     }
 }
-public List<Book> getBooksWithinPriceLimit(List<Book> books, double maxPrice) {
-    List<Book> result = new ArrayList<>();
-    for (int i = 0; i < books.size(); i++) {
-        Book book = books.get(i);
-        if (book.getPreis() <= maxPrice) {
-            result.add(book);
-        }
+    public List<Book> getBooksWithinPriceLimit(List<Book> books, double maxPrice) {
+        List<Book> result = new ArrayList<>();
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (book.getPreis() <= maxPrice) {
+                result.add(book);
+            }
+        }return result;
     }
-}
 
-public Book getMostExpensiveBook(List<Book> books) {
-    if (books == null || books.isEmpty())
-        return null;
-    Book mostExpensive = books.get(0);
-    for (int i = 0; i < books.size(); i++) {
-        Book book = books.get(i);
-        if (book.getPreis() > mostExpensive.getPreis()) {
-            mostExpensive = book;
+    public Book getMostExpensiveBook(List<Book> books) {
+        if (books == null || books.isEmpty())
+            return null;
+        Book mostExpensive = books.get(0);
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (book.getPreis() > mostExpensive.getPreis()) {
+                mostExpensive = book;
+            }
         }
+        return mostExpensive;
     }
-    return mostExpensive;
-}
+    public List<Book> getBooksWithMinimumPages(List<Book> books, int minPages) {
+        List<Book> result = new ArrayList<>();
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (book.getPages() >= minPages) {
+                result.add(book);
+            }
+        }
+        return result;
+    }
