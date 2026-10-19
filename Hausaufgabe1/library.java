@@ -30,3 +30,14 @@ public class library {
         return totalPages / books.size();
     }
 }
+
+public Book getMostExpensiveBook(List<Book> books) {
+    Book mostExpensive = books.get(0);
+    for (int i = 0; i < books.size(); i++) {
+        Book book = books.get(i);
+        if (book.getPreis() > mostExpensive.getPreis()) {
+            mostExpensive = book;
+        }
+    }
+    return mostExpensive;
+}
