@@ -30,8 +30,19 @@ public class library {
         return totalPages / books.size();
     }
 }
+public List<Book> getBooksWithinPriceLimit(List<Book> books, double maxPrice) {
+    List<Book> result = new ArrayList<>();
+    for (int i = 0; i < books.size(); i++) {
+        Book book = books.get(i);
+        if (book.getPreis() <= maxPrice) {
+            result.add(book);
+        }
+    }
+}
 
 public Book getMostExpensiveBook(List<Book> books) {
+    if (books == null || books.isEmpty())
+        return null;
     Book mostExpensive = books.get(0);
     for (int i = 0; i < books.size(); i++) {
         Book book = books.get(i);
