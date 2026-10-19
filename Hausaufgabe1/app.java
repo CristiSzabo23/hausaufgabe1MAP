@@ -37,3 +37,38 @@ public class app {
         testMedia.add(b2);
         testMedia.add(b3);
         System.out.println(library.getAveragePageCount(testMedia));
+
+        System.out.println("\nMaximaler Preis: 30 Euro");
+        List<Book> ieftine = library.getBooksWithinPriceLimit(allBooks, 30);
+        for (int i = 0; i < ieftine.size(); i++) {
+            Book book = ieftine.get(i);
+            System.out.println(book.getTitel() + " -> " + book.getPreis() + " Euro");
+        }
+
+        System.out.println("\nTeuerstes Buch:");
+        List<Book> testScumpa = new ArrayList<>();
+        testScumpa.add(b2);
+        testScumpa.add(b3);
+        testScumpa.add(b5);
+        Book scumpa = library.getMostExpensiveBook(testScumpa);
+        if (scumpa != null) {
+            System.out.println(scumpa.getTitel() + " (" + scumpa.getPreis() + " Euro)");
+        }
+
+        System.out.println("\nMindestanzahl: 300 Seiten");
+        List<Book> lungi = library.getBooksWithMinimumPages(allBooks, 300);
+        for (int i = 0; i < lungi.size(); i++) {
+            System.out.println(" | " + lungi.get(i).getTitel());
+        }
+
+        System.out.println("\nBudget: 55 Euro");
+        Book[] pereche = library.getTwoBooksWithinBudget(allBooks, 55);
+        if (pereche.length == 2 && pereche[0] != null) {
+            System.out.println("Ergebnis:\n" + pereche[0].getTitel() + " + " + pereche[1].getTitel());
+            double total = pereche[0].getPreis() + pereche[1].getPreis();
+            System.out.println("Gesamtpreis: " + total + " Euro");
+        } else {
+            System.out.println("Nu s-a gasit nicio pereche.");
+        }
+    }
+}
